@@ -5,9 +5,9 @@ Product.destroy_all
 User.destroy_all
 
 puts "Creating users..."
-user1 = User.create(name: Faker::Name.name)
-user2 = User.create(name: Faker::Name.name)
-user3 = User.create(name: Faker::Name.name)
+user1 = User.create(name: "Anwar")
+user2 = User.create(name: "Yahya")
+user3 = User.create(name: "Mohamed")
 
 puts "Creating products..."
 product1 = Product.create(name: "Stapler", price: 10)
@@ -22,5 +22,9 @@ puts "Creating reviews..."
 # * and a review belongs to an user.                              *
 # *****************************************************************
 # Create Reviews Here
+
+review1=Review.create(product_id: product1.id,user_id:user1.id,star_rating:5,comment:"Nice !")
+review1=Review.create(product_id: product1.id,user_id:user1.id,star_rating:4,comment:"cool !")
+review1=Review.create(product_id: product1.id,user_id:user1.id,star_rating:3,comment:"wow !")
 
 puts "Seeding done!"
